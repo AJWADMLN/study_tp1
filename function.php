@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// توليد الرقم العشوائي بين 1 و100 إذا مازال ما تولدش
 function getRandomNumber() {
     if (empty($_SESSION['number'])) {
         $_SESSION['number'] = rand(1, 100);
@@ -27,7 +26,7 @@ function verifyGuess($guess) {
         return "Too high!";
     } else {
         $attempts = $_SESSION['attempts'];
-        session_destroy(); // نرجعو اللعبة من الأول منين يربح
+        session_destroy();
         return "🎉 Correct! You guessed it in $attempts attempts.";
     }
 }
